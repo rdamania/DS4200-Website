@@ -1,0 +1,192 @@
+/* =========================================================
+   CUSTOMIZATION 1: COHESIVE COLOR SCHEME
+   All colors are defined once here and reused everywhere.
+   ========================================================= */
+:root {
+  --paper: #EDF1EF;      /* cool grey-green page background */
+  --ink: #1D2B2F;        /* main text color */
+  --muted: #5B6B6F;      /* secondary text */
+  --navy: #173A5E;       /* headings and header bar */
+  --link: #1F5FAD;       /* links */
+  --dem: #2F5DA8;        /* Democratic bars */
+  --rep: #C0392B;        /* Republican bars */
+}
+
+/* =========================================================
+   CUSTOMIZATION 2: CUSTOM FONTS / TYPOGRAPHY
+   Newsreader (serif) for headings, Work Sans for body text,
+   both loaded from Google Fonts in each HTML <head>.
+   ========================================================= */
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Work Sans", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: "Newsreader", Georgia, serif;
+  color: var(--navy);
+  line-height: 1.15;
+}
+
+h1 { font-size: 3.2rem; margin: 0 0 8px; }     /* biggest: home page only */
+h2 { font-size: 2.2rem; margin: 0 0 16px; }    /* smaller: second page */
+h3 { font-size: 1.4rem; margin: 32px 0 10px; }
+
+a { color: var(--link); }
+a:hover { color: var(--navy); }
+
+/* =========================================================
+   CUSTOMIZATION 3: LAYOUT, MARGINS, AND PADDING
+   ========================================================= */
+
+/* Header bar with flexbox: name on the left, links on the right */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 16px 32px;
+  background: var(--navy);
+}
+
+.site-name {
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 1.4rem;
+  color: white;
+  text-decoration: none;
+}
+
+.site-nav a {
+  color: #D6E2EE;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  color: white;
+  border-bottom: 2px solid white;   /* underline shows which page you're on */
+}
+
+/* Keep text at a readable width and centered on the page */
+.page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  color: var(--muted);
+  margin-bottom: 32px;
+}
+
+/* Home page: photo on the left, text on the right (CSS grid) */
+.intro {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.profile-photo {
+  width: 100%;
+  border-radius: 50%;
+  border: 4px solid white;
+}
+
+.content-image {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  margin: 24px auto;
+}
+
+/* Numbered list with colored numbers */
+.styled-list { padding-left: 24px; }
+.styled-list li { margin-bottom: 8px; }
+.styled-list li::marker {
+  color: var(--navy);
+  font-weight: 500;
+}
+
+/* D3 chart area */
+.chart-container {
+  background: white;
+  padding: 16px;
+  border-left: 4px solid var(--navy);
+}
+
+/* If the screen is narrower than the chart, scroll sideways instead of squishing it */
+.chart-container { overflow-x: auto; }
+
+.bar-dem { fill: var(--dem); }
+.bar-rep { fill: var(--rep); }
+
+/* Chart legend */
+.legend { margin-bottom: 8px; font-size: 0.95rem; }
+.legend-item { margin-right: 20px; }
+.swatch {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+.swatch-dem { background: var(--dem); }
+.swatch-rep { background: var(--rep); }
+.bar:hover { opacity: 0.75; }
+.zero-line { stroke: var(--ink); stroke-width: 1; }
+
+.chart-note {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* Footer / contact section */
+.site-footer {
+  border-top: 1px solid #C9D3D1;
+  padding: 8px 32px 32px;
+  text-align: center;
+}
+
+.contact-links {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-links li {
+  display: inline;
+  margin: 0 12px;
+}
+
+/* On phones, stack the photo above the text */
+@media (max-width: 600px) {
+  h1 { font-size: 2.4rem; }
+  .intro { grid-template-columns: 1fr; }
+  .profile-photo { max-width: 180px; }
+  .site-nav a { margin-left: 0; margin-right: 16px; }
+}
+
+   .banner {
+     max-width: 480px;
+     margin: 0 auto 24px;
+   }
+
+   .banner-image {
+     display: block;
+     width: 100%;
+     height: auto;
+     border-radius: 4px;
+   }
+
+   .banner figcaption {
+     font-size: 0.85rem;
+     color: var(--muted);
+     margin-top: 6px;
+   }

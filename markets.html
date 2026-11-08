@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rushil Damania | Markets</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,700&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="index.html" class="site-name">Rushil Damania</a>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="markets.html" class="active">Markets</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="page">
+
+    <h2>Does it matter who’s in the White House?</h2>
+
+    <figure class="banner">
+      <img src="images/presidents.png" alt="Illustration of past presidents in alternating blue and red panels" class="banner-image">
+      <figcaption>Image: Forbes</figcaption>
+    </figure>
+
+    <p>This week’s midterms and the resulting market turmoil gave me the idea for this page. Democrats took back Congress, and the market couldn’t decide how it felt. Futures dropped overnight, stocks rallied hard on Wednesday, then slid again on Thursday on worries that Democrats would slow the AI data center buildout. Of course, the hot takes about what the market was saying started right away. That got me wondering whether the party in the White House actually matters for stocks over a full year, not just a few days.</p>
+
+    <!-- D3 VISUALIZATION -->
+    <h3>S&amp;P 500 total return by year and president’s party</h3>
+    <div class="legend">
+      <span class="legend-item"><span class="swatch swatch-dem"></span>Democratic president</span>
+      <span class="legend-item"><span class="swatch swatch-rep"></span>Republican president</span>
+    </div>
+    <div id="chart" class="chart-container"></div>
+    <p class="chart-note">Calendar-year total returns, dividends included (approximate). Hover over a bar to see the year, president, and return.</p>
+
+    <p>The chart above shows the S&amp;P 500’s total return every year from 1993 to 2025, with blue bars for years under a Democratic president and red bars for a Republican one. The honest answer is that the party in charge does not matter as much as you’d think. Both sides have big years (1995 under Clinton, 2019 under Trump) and ugly ones (2008 under Bush, 2022 under Biden). A lot of it comes down to timing, the geopolitical environment, and broader economic trends. The 2008 financial crisis hit at the end of Bush’s term, and the recovery landed right as Obama took office, so the colors can tell almost any story depending on which years you look at. Presidents also don’t set interest rates, control earnings, or cause pandemics.</p>
+
+    <p>If you’re picking stocks based on who wins elections, you’re probably watching the wrong thing.</p>
+
+    <p>A few things that matter more than who’s president:</p>
+    <ul class="styled-list">
+      <li>Interest rates and what the Federal Reserve does next</li>
+      <li>Corporate earnings</li>
+      <li>Recessions and the broader economy</li>
+      <li>Unexpected shocks, like a pandemic or a war</li>
+    </ul>
+
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <h3>Contact</h3>
+    <ul class="contact-links">
+      <li><a href="mailto:your.email@northeastern.edu">Email</a></li>
+      <li><a href="https://www.linkedin.com/in/your-profile" target="_blank">LinkedIn</a></li>
+      <li><a href="https://github.com/your-username" target="_blank">GitHub</a></li>
+    </ul>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="chart.js"></script>
+</body>
+</html>
